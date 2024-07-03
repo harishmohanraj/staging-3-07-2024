@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for staging-3-07-2024-1719995230-client on 2024-07-03T08:28:03Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'staging-3-07-2024-1719995230-client'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+  internal_port = 8043
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
